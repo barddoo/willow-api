@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
 
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 import app from './app';
+import {Application} from "express";
 
-require('@babel/register');
+dotenv.config();
+
 // Handle uncaught exceptions
 process.on('uncaughtException', (uncaughtExc) => {
   // Won't execute
@@ -15,8 +17,6 @@ process.on('uncaughtException', (uncaughtExc) => {
 
 // Setup an express server and define port to listen all incoming requests for this application
 const setUpExpress = () => {
-  dotenv.config({ path: '.env' });
-
   const port = process.env.APP_PORT || 3000;
 
   const server = app.listen(port, () => {
@@ -24,16 +24,14 @@ const setUpExpress = () => {
   });
 
   // In case of an error
-  app.on('error', (appErr, appCtx) => {
+  app.on('error', (appErr: Application) => {
     console.error('app error', appErr.stack);
-    console.error('on url', appCtx.req.url);
-    console.error('with headers', appCtx.req.headers);
   });
 
   // Handle unhandled promise rejections
-  process.on('unhandledRejection', (err) => {
+  process.on('unhandledRejection', (err: {} | null | undefined) => {
     console.log('UNHANDLED REJECTION! 💥 Shutting down...');
-    console.log(err.name, err.message);
+    console.log(JSON.stringify(err));
     // Close server & exit process
     server.close(() => {
       process.exit(1);
