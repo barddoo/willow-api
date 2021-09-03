@@ -66,11 +66,7 @@ export const listTopicByUser = async (req: Request, res: Response) => {
       nest: true,
       include: {model: Topic},
     });
-    // const topics = result.map((obj) => obj.Topics).map((obj) => {
-    //   const value = {...obj};
-    //   delete value.UsersTopics;
-    //   return value;
-    // });
+
     return res.send({
       user_id: userId,
       topics: result.map(value => value.topics),

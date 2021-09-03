@@ -11,7 +11,8 @@ router.post(
   '/',
   ...topicValidator.register,
   topicController.register,
-
 );
+router.get('/:topicId/topics', topicController.listUsersByTopic);
+
 
 export default router;
