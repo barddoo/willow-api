@@ -12,7 +12,7 @@ router.post(
   ...topicValidator.register,
   topicController.register,
 );
-router.get('/:topicId/topics', topicController.listUsersByTopic);
+router.get('/:topicId/users', topicController.listUsersByTopic);
 
 
 export default router;
