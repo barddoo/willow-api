@@ -23,28 +23,3 @@ export default class User extends Model {
   @UpdatedAt
   updatedAt?: Date
 }
-
-
-// export const User = sequelize.define<UserModel>(
-//   'User',
-//   {
-//     id: {
-//       type: DataTypes.INTEGER,
-//       primaryKey: true,
-//       autoIncrement: true,
-//     },
-//     name: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//     email: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//   }, {
-//     createdAt: false,
-//     updatedAt: false,
-//     underscored: true,
-//     modelName: 'users',
-//   },
-// );

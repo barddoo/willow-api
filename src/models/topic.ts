@@ -23,27 +23,3 @@ export default class Topic extends Model {
   updatedAt?: Date
 
 }
-
-// export const Topic = sequelize.define<TopicModel>(
-//   'Topic',
-//   {
-//     id: {
-//       type: DataTypes.INTEGER,
-//       primaryKey: true,
-//       autoIncrement: true,
-//     },
-//     english_name: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//     klingon_name: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//   }, {
-//     createdAt: false,
-//     updatedAt: false,
-//     underscored: true,
-//     tableName: 'topics',
-//   },
-// );
