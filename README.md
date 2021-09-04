@@ -25,6 +25,10 @@ yarn install
 yarn start
 ```
 
+## Endpoints
+
+
+
 ## Author
 
 👤 **Charles Fonseca**

@@ -15,6 +15,7 @@ services:
       POSTGRES_DB: willow
   service:
     build:
+      context: .
       dockerfile: Dockerfile
 
 
