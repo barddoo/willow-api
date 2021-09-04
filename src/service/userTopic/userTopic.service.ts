@@ -4,8 +4,7 @@ import UsersTopics from "../../models/userTopics";
 
 export const associate = async (req: Request, res: Response) => {
   try {
-    const {userId} = req.params;
-    const {topicId} = req.body;
+    const {topicId, userId} = req.body;
 
     const result = await UsersTopics.create({
         user_id: userId, topic_id: topicId,
@@ -19,8 +18,7 @@ export const associate = async (req: Request, res: Response) => {
 
 export const removeAssociation = async (req: Request, res: Response) => {
   try {
-    const {userId} = req.params;
-    const {topicId} = req.body;
+    const {topicId, userId} = req.body;
 
     const result = await UsersTopics.destroy({
       where: {user_id: userId, topic_id: topicId},

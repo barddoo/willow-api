@@ -1,8 +1,8 @@
+import * as express from 'express';
 import usersRoutes from './routes/user.route';
 import topicsRoutes from './routes/topic.route';
 import associationRoutes from './routes/userTopic.route';
 
-import * as express from 'express';
 import {setupDatabase} from "./config/sequelize";
 import errorHandler from "./middleware/errorHandler";
 
