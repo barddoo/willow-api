@@ -1,7 +1,7 @@
 import * as express from 'express';
 
-import * as userController from '../controllers/user/user.controller';
-import * as userValidator from '../controllers/user/user.validator';
+import * as userController from '../service/user/user.service';
+import * as userValidator from '../service/user/user.validator';
 
 const router = express.Router();
 
@@ -12,7 +12,5 @@ router.post('/',
 router.get('/:userId', userController.findUser);
 
 router.get('/:userId/topics', userController.listTopicByUser);
-router.post('/:userId/topics', userController.associateTopic);
-router.delete('/:userId/topics', userController.removeAssociatedTopic);
 
 export default router;

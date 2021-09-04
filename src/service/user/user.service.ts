@@ -1,7 +1,6 @@
 import {errorResponse} from '../../helpers';
 import {Request, Response} from "express";
 import User from "../../models/user";
-import UsersTopics from "../../models/userTopics";
 import Topic from "../../models/topic";
 
 export const findUser = async (req: Request, res: Response) => {
@@ -41,50 +40,19 @@ export const allUsers = async (req: Request, res: Response) => {
   }
 };
 
-export const associateTopic = async (req: Request, res: Response) => {
-  try {
-    const {userId} = req.params;
-    const {topicId} = req.body;
-
-    const result = await UsersTopics.create({
-        user_id: userId, topic_id: topicId,
-      },
-      {fields: ['user_id', 'topic_id']});
-    return res.send({user_id: result.user_id, topic_id: result.topic_id});
-  } catch (error: any) {
-    return errorResponse(res, error.message);
-  }
-};
-
 export const listTopicByUser = async (req: Request, res: Response) => {
   try {
     const {userId} = req.params;
 
     const result = await User.findAll({
       where: {id: userId},
-      raw: true,
-      nest: true,
       include: {model: Topic},
     });
 
     return res.send({
       user_id: userId,
-      topics: result.map(value => value.topics),
+      topics: result.map(value => value.topics).filter(value => value?.length != 0),
     });
-  } catch (error: any) {
-    return errorResponse(res, error.message);
-  }
-};
-
-export const removeAssociatedTopic = async (req: Request, res: Response) => {
-  try {
-    const {userId} = req.params;
-    const {topicId} = req.body;
-
-    await UsersTopics.destroy({
-      where: {user_id: userId, topic_id: topicId},
-    });
-    return res.send({user_id: userId, topic_id: topicId});
   } catch (error: any) {
     return errorResponse(res, error.message);
   }

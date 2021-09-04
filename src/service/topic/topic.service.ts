@@ -1,6 +1,7 @@
 import Topic from '../../models/topic';
 import {errorResponse} from '../../helpers';
 import {Request, Response} from 'express';
+import User from "../../models/user";
 
 export const find = async (req: Request, res: Response) => {
   try {
@@ -43,14 +44,12 @@ export const listUsersByTopic = async (req: Request, res: Response) => {
 
     const result = await Topic.findAll({
       where: {id: topicId},
-      raw: true,
-      nest: true,
-      include: {model: Topic},
+      include: {model: User},
     });
 
     return res.send({
       topic_id: topicId,
-      topics: result.map(value => value.users),
+      topics: result.map(value => value.users).filter(value => value?.length != 0),
     });
   } catch (error: any) {
     return errorResponse(res, error.message);

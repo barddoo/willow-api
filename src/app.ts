@@ -1,9 +1,10 @@
-import usersRoutes from './routes/users';
-import topicsRoutes from './routes/topics';
-import errorHandler from './middleware/errorHandler';
+import usersRoutes from './routes/user.route';
+import topicsRoutes from './routes/topic.route';
+import associationRoutes from './routes/userTopic.route';
 
 import * as express from 'express';
 import {setupDatabase} from "./config/sequelize";
+import errorHandler from "./middleware/errorHandler";
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -17,10 +18,10 @@ app.use(
 );
 
 
-
 app.use(express.json());
 app.use('/topics', topicsRoutes);
+app.use('/associate', associationRoutes);
 app.use('/users', usersRoutes);
-// app.use(errorHandler);
+app.use(errorHandler);
 
 export default app;

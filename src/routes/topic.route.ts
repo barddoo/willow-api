@@ -1,7 +1,7 @@
 import {Router} from 'express';
 
-import * as topicController from '../controllers/topic/topic.controller';
-import * as topicValidator from '../controllers/topic/topic.validator';
+import * as topicController from '../service/topic/topic.service';
+import * as topicValidator from '../service/topic/topic.validator';
 
 const router = Router();
 
