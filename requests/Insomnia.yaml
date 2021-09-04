@@ -1,0 +1,325 @@
+_type: export
+__export_format: 4
+__export_date: 2021-09-04T19:39:40.619Z
+__export_source: insomnia.desktop.app:v2021.5.2
+resources:
+  - _id: req_5d509864c2cb49c78d0a7a2f237fd601
+    parentId: fld_47e1503f57414127af664a2b68c5d757
+    modified: 1630783581117
+    created: 1630680504960
+    url: http://localhost:3000/topics/2
+    name: find topic
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630625267282.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_47e1503f57414127af664a2b68c5d757
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630783561284
+    created: 1630783561284
+    name: Topics
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1630783561284
+    _type: request_group
+  - _id: wrk_beb4e96e90ff4c0f958a176203de6e43
+    parentId: null
+    modified: 1630674189987
+    created: 1630674189987
+    name: Projetos
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_89f4821e51f24773a607201123277add
+    parentId: fld_47e1503f57414127af664a2b68c5d757
+    modified: 1630784125725
+    created: 1630783573144
+    url: http://localhost:3000/topics
+    name: find all topics
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630625267257.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d38c55a46761464b90590a33617d7330
+    parentId: fld_47e1503f57414127af664a2b68c5d757
+    modified: 1630783564980
+    created: 1630680498382
+    url: http://localhost:3000/topics
+    name: create topic
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"english_name":"{% faker 'name', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'en' %}",
+        	"klingon_name": "{% faker 'name', '', '', '', '', '', '', '', '', '', '', 'jobDescriptor', '', '', '', '', 'en' %}"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630625267232.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_041995f7d0684b5e98d4e07d3ea0d968
+    parentId: fld_47e1503f57414127af664a2b68c5d757
+    modified: 1630784212520
+    created: 1630783605083
+    url: http://localhost:3000/topics/5/users
+    name: find users by topic
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630625267182.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d001af7c311c4b0f8e87cd0630d507e9
+    parentId: fld_7c515594ca0e4662b03d68ae370b5da1
+    modified: 1630784148434
+    created: 1630674195886
+    url: http://localhost:3000/users
+    name: find user
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1630674195987
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_7c515594ca0e4662b03d68ae370b5da1
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630783543907
+    created: 1630783543907
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1630783543907
+    _type: request_group
+  - _id: req_e90f9b78c70d481dbaa663826b0d96f9
+    parentId: fld_7c515594ca0e4662b03d68ae370b5da1
+    modified: 1630784153424
+    created: 1630706712858
+    url: http://localhost:3000/users
+    name: find all users
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1630674195937
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cc5e27a6610b43799bb1b546f415bfa4
+    parentId: fld_7c515594ca0e4662b03d68ae370b5da1
+    modified: 1630783627650
+    created: 1630679999552
+    url: http://localhost:3000/users
+    name: create user
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"name":"{% faker 'name', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'en' %}",
+        	"email": "{% gerarEmail 'email.test.', true, 1, 9999, '', 'mock.com.br' %}"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630674195887
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_46f500cd18ba4bc7b35b191830e058cc
+    parentId: fld_7c515594ca0e4662b03d68ae370b5da1
+    modified: 1630783550826
+    created: 1630680662001
+    url: http://localhost:3000/users/3/topics
+    name: find topics by user
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630674195837
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_336ed6845cb34543be11ac92a80d28cb
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630784216318
+    created: 1630680791551
+    url: http://localhost:3000/associate
+    name: Associate topics with user
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"topicId": 5,
+        	"userId": 3
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630667570131.7031
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ee1ca11550a44582a3e8c46e45cc6153
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630784222868
+    created: 1630779527275
+    url: http://localhost:3000/associate
+    name: Remote association topics with user
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"topicId": 5,
+        	"userId": 3
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02419ba05e54c5b95d4b17f939e3740
+    authentication: {}
+    metaSortKey: -1630667060458.2188
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_99d8e8d32bb42e411de5f7ef2608d12cff9f2804
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630674189997
+    created: 1630674189997
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1630674189997
+    _type: environment
+  - _id: jar_99d8e8d32bb42e411de5f7ef2608d12cff9f2804
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630674190000
+    created: 1630674190000
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_3c0be8aadfd2432195b745fae1224311
+    parentId: wrk_beb4e96e90ff4c0f958a176203de6e43
+    modified: 1630674189991
+    created: 1630674189991
+    fileName: Projetos
+    contents: ""
+    contentType: yaml
+    _type: api_spec

@@ -27,7 +27,63 @@ yarn start
 
 ## Endpoints
 
+[Insomnia](https://insomnia.rest/) collection can be found [here](./requests/Insomnia.yaml)
 
+#### Topics
+
+* List
+
+GET `/topics`
+
+* List by id
+
+GET `/topics/{id}`
+
+* Create
+
+POST `/topics`
+
+{
+"english_name":"",
+"klingon_name": ""
+}
+
+* List users by topic
+
+GET `/topics/{id}/users`
+
+#### Users
+
+* List
+
+GET `/users`
+
+* List by id
+
+GET `/users/{id}`
+
+* Create
+
+POST `/users`
+
+{
+"name":"",
+"email": ""
+}
+
+* List users by topic
+
+`/users/{id}/topics`
+
+#### Associations
+
+* Associate
+
+POST `/associate`
+
+* Remove association
+
+DELETE `/associate`
 
 ## Author
 
